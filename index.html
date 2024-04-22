@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+
+    <style>
+        
+        body {
+            background: linear-gradient(#000000, #da06dab0);
+        }
+
+
+        .fundo {
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .borda{
+            border: 2px solid rosybrown;
+            border-radius: 50px;
+            width: 500px;
+            height: 500px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .foto {
+            padding-bottom: 2px;
+        }
+
+        .texto {
+            color: blueviolet;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: #da06dab0;
+            border: 2px solid slateblue;
+            border-radius: 10px;
+            margin-left: -60px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: #da06dab0;
+            border: 2px solid slateblue;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section>
+        <div class="fundo">
+            <div class="borda">
+            <h1 class="texto">Pedido de casamento</h1>
+
+            <img src="./src/imagens/projeto-removebg-preview.png" class="foto">
+
+            <h2>Aceitas?</h2>
+
+            <a href="https://www.youtube.com/watch?v=kQ2ZFVJNMs0" target="_blank"><button id="sim">Sim!</button></a>
+            <button onmouseover="fuja()" id="nao">Não!</button>
+            
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random * maxY)
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+
+    </script>
+
+</body>
+</html>
